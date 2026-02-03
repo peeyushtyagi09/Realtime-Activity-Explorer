@@ -1,16 +1,43 @@
-# React + Vite
+# Scalable React UI for Large & Dynamic Datasets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project addresses the challenges of building a **scalable React UI for large and frequently updating datasets**. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The core problem being solved is efficient rendering, smooth user experience, and sensible data management for applications handling tens of thousands of records—avoiding UI lag, excessive re-renders, and unnecessary network load, while keeping user interactions fast and responsive.
 
-## React Compiler
+To achieve this, the project leverages industry best practices, including:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **List virtualization** to efficiently display massive lists.
+- **Debounced and cancellable data fetching** to reduce network and rendering overhead.
+- **Memoization** to optimize derived data computations.
+- **Concurrent rendering** for a fluid, responsive UI under heavy load.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Phase 1 — Static Feed (Baseline Project)
+
+#### Goal
+
+Create a minimal but realistic application baseline, focused purely on rendering a large, static list efficiently.
+
+#### What Was Built
+
+- **Main Feed Screen:** The root component displaying the list.
+- **Static List of Activity/Log Items:** No dynamic data—just a simulated large dataset.
+- **Scrollable Layout:** Lets users easily scroll through large numbers of items.
+- **Basic List Item UI:** Each item visually represents an entry in the feed.
+
+#### Architecture/Parts Involved
+
+- **Feed Component:** Controls the list rendering and layout.
+- **List Item Component:** Renders each log or activity entry.
+- **Static Data Source:** Simulates a large dataset; no networking or server yet.
+
+#### Exit Criteria
+
+- User can scroll through a long list of items.
+- All items render correctly and appear as a polished list.
+- No performance issues, even with thousands of static entries.
+
+---
