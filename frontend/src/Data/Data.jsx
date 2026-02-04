@@ -1,6 +1,6 @@
 import React from 'react';
 import Data_component from './Data_component'
-const count = 2000;
+const count = 1000;
 const Data = () => {
     return (
         <div>
